@@ -53,6 +53,11 @@
             border-color: #007bff;
             transition: all 0.3s ease;
             display: block; /* Ensure buttons stack vertically */
+            text-align: left; /* Align text to the left */
+            padding: 10px; /* Add padding for better readability */
+        }
+        .btn i {
+            margin-right: 10px; /* Add space between icon and text */
         }
         .btn:hover {
             background-color: #0056b3;
@@ -96,6 +101,7 @@
 
     <!-- Script to play audio and fetch buttons from JSON -->
     <script>
+        // Script to play audio and fetch buttons from JSON
         function playAudio() {
             var audio = document.getElementById('linkmp3');
             audio.play();
@@ -114,13 +120,23 @@
                         var btn = document.createElement('a');
                         btn.setAttribute('href', button.link);
                         btn.setAttribute('class', 'btn');
-                        btn.textContent = button.text;
                         btn.setAttribute('target', '_blank'); // Open link in new tab
+
+                        // Create icon element
+                        var icon = document.createElement('i');
+                        icon.setAttribute('class', button.icon);
+                        btn.appendChild(icon);
+
+                        // Create text span element
+                        var textSpan = document.createElement('span');
+                        textSpan.textContent = button.title;
+                        btn.appendChild(textSpan);
+
                         buttonsContainer.appendChild(btn);
                     });
 
                     // Display buttons container after initial button is clicked
-                    buttonsContainer.style.display = 'flex'; // Show buttons container
+                    buttonsContainer.style.display = 'block';
 
                     // Show card footer after initial button is clicked
                     var cardFooter = document.querySelector('.card-footer');
