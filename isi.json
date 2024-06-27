@@ -11,9 +11,9 @@
             "icon": "fab fa-youtube"
         },
         {
-            "title": "Twitter",
-            "link": "#",
-            "icon": "fab fa-twitter"
+            "title": "Website Personal",
+            "link": "https://rexxzyn.vercel.app",
+            "icon": "fab fa-google"
         },
         {
             "title": "Instagram",
