@@ -57,6 +57,8 @@
             color: #ffffff; /* Teks putih */
             border-color: #007bff; /* Warna border yang sesuai */
             transition: all 0.3s ease;
+            position: relative; /* Tambahkan posisi relatif untuk tombol */
+            z-index: 3; /* Tingkatkan indeks z untuk tombol agar di atas efek hujan */
         }
         .btn:hover {
             background-color: #0056b3; /* Warna lebih gelap saat hover */
@@ -97,6 +99,7 @@
             animation: rain 1.5s linear infinite;
             bottom: -10px; /* Mulai dari luar layar */
             pointer-events: none;
+            z-index: 0; /* Tetapkan indeks z agar di bawah konten lain */
         }
         /* Animasi petir */
         @keyframes lightning {
@@ -122,7 +125,7 @@
             height: 100%;
             background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 80%);
             animation: lightning 3s linear infinite;
-            z-index: 0;
+            z-index: 0; /* Tetapkan indeks z agar di bawah konten lain */
         }
     </style>
 </head>
@@ -135,7 +138,9 @@
             <div class="card-body">
                 <h5 class="card-title">RexxzynXD <i class="fas fa-check-circle verified-badge"></i></h5>
                 <p class="card-text">Hubungi saya</p>
-                <div id="buttons-container"></div>
+                <div id="buttons-container">
+                    <button type="button" class="btn btn-primary">Button Saya</button>
+                </div>
             </div>
             <div class="card-footer text-muted">
                 <i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia
