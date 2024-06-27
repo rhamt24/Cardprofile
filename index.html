@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Card</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,7 +12,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background-image: url('https://files.catbox.moe/2n0qqe.jpg'); /* Ganti dengan URL gambar Anda */
+            background-image: url('https://files.catbox.moe/2n0qqe.jpg');
             background-size: cover;
             background-position: center;
             margin: 0;
@@ -28,14 +28,14 @@
             width: 100%;
             max-width: 400px;
             border-radius: 15px;
-            animation: pulseBorder 1.5s infinite alternate; /* Animasi border */
+            animation: pulseBorder 1.5s infinite alternate;
         }
         @keyframes pulseBorder {
             from {
-                border-color: #007bff; /* Warna border awal */
+                border-color: #007bff;
             }
             to {
-                border-color: #0056b3; /* Warna border target */
+                border-color: #0056b3;
             }
         }
         .card-img-top {
@@ -46,32 +46,31 @@
             margin: 15px auto;
         }
         .btn {
-            width: 80%; /* Lebar tombol disesuaikan */
+            width: 80%;
             margin-bottom: 5px;
-            background-color: #007bff; /* Warna utama Bootstrap */
-            color: #ffffff; /* Teks putih */
-            border-color: #007bff; /* Warna border yang sesuai */
+            background-color: #007bff;
+            color: #ffffff;
+            border-color: #007bff;
             transition: all 0.3s ease;
         }
         .btn:hover {
-            background-color: #0056b3; /* Warna lebih gelap saat hover */
+            background-color: #0056b3;
             border-color: #0056b3;
         }
         .verified-badge {
-            color: #1da1f2; /* Warna biru Twitter */
+            color: #1da1f2;
             margin-left: 5px;
         }
         footer {
             text-align: center;
             margin-top: 20px;
             color: #777;
-            background-color: #f8f9fa; /* Warna latar belakang opsional */
+            background-color: #f8f9fa;
             padding: 10px 0;
             width: 100%;
         }
-        /* CSS untuk menyembunyikan kontainer dan footer */
-        #buttons-container, .card-footer {
-            display: none;
+        #buttons-container {
+            display: none; /* Mulai dengan menyembunyikan kontainer tombol */
         }
     </style>
 </head>
@@ -90,9 +89,6 @@
             <!-- Tombol awal untuk memainkan audio -->
             <button onclick="playAudio()" class="btn" id="playButton">≡ Lihat Link</button>
         </div>
-        <div id="buttons-container"></div>
-            </div>
-            <div class="card-footer text-muted">
     </div>
 
     <footer>&copy; Hak Cipta 2024 | RexxzynXD</footer>
@@ -103,16 +99,39 @@
             var audio = document.getElementById('linkmp3');
             audio.play();
             
-            // Tampilkan buttons-container dan card-footer setelah tombol pertama ditekan
-            var buttonsContainer = document.getElementById('buttons-container');
-            buttonsContainer.style.display = 'block';
-            
-            var cardFooter = document.querySelector('.card-footer');
-            cardFooter.style.display = 'block';
-            
-            // Sembunyikan tombol pertama setelah ditekan
-            var playButton = document.getElementById('playButton');
-            playButton.style.display = 'none';
+            // Ambil data dari isi.json
+            fetch('isi.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Ambil kontainer tombol
+                    var buttonsContainer = document.getElementById('buttons-container');
+                    // Bersihkan kontainer tombol sebelum menambahkan yang baru
+                    buttonsContainer.innerHTML = '';
+
+                    // Iterasi data tombol dari JSON dan buat tombol-tombolnya
+                    data.buttons.forEach(button => {
+                        var btn = document.createElement('a');
+                        btn.setAttribute('href', button.link);
+                        btn.setAttribute('class', 'btn');
+                        btn.textContent = button.text;
+                        btn.setAttribute('target', '_blank'); // Buka link di tab baru
+                        buttonsContainer.appendChild(btn);
+                    });
+
+                    // Tampilkan kontainer tombol setelah tombol awal ditekan
+                    buttonsContainer.style.display = 'flex'; // Menampilkan kontainer tombol
+
+                    // Tampilkan card-footer setelah tombol awal ditekan
+                    var cardFooter = document.querySelector('.card-footer');
+                    cardFooter.style.display = 'block';
+
+                    // Sembunyikan tombol pertama setelah ditekan
+                    var playButton = document.getElementById('playButton');
+                    playButton.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error fetching JSON:', error);
+                });
         }
     </script>
 
