@@ -46,12 +46,13 @@
             margin: 15px auto;
         }
         .btn {
-            width: 80%;
+            width: 100%;
             margin-bottom: 5px;
             background-color: #007bff;
             color: #ffffff;
             border-color: #007bff;
             transition: all 0.3s ease;
+            display: block; /* Ensure buttons stack vertically */
         }
         .btn:hover {
             background-color: #0056b3;
@@ -70,7 +71,7 @@
             width: 100%;
         }
         #buttons-container {
-            display: none; /* Mulai dengan menyembunyikan kontainer tombol */
+            display: none; /* Start by hiding the buttons container */
         }
     </style>
 </head>
@@ -86,46 +87,46 @@
             <div class="card-footer text-muted">
                 <i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia
             </div>
-            <!-- Tombol awal untuk memainkan audio -->
+            <!-- Initial button to trigger fetching and displaying buttons -->
             <button onclick="playAudio()" class="btn" id="playButton">≡ Lihat Link</button>
         </div>
     </div>
 
     <footer>&copy; Hak Cipta 2024 | RexxzynXD</footer>
 
-    <!-- Script untuk memainkan audio -->
+    <!-- Script to play audio and fetch buttons from JSON -->
     <script>
         function playAudio() {
             var audio = document.getElementById('linkmp3');
             audio.play();
             
-            // Ambil data dari isi.json
+            // Fetch data from isi.json
             fetch('isi.json')
                 .then(response => response.json())
                 .then(data => {
-                    // Ambil kontainer tombol
+                    // Get buttons container
                     var buttonsContainer = document.getElementById('buttons-container');
-                    // Bersihkan kontainer tombol sebelum menambahkan yang baru
+                    // Clear previous buttons
                     buttonsContainer.innerHTML = '';
 
-                    // Iterasi data tombol dari JSON dan buat tombol-tombolnya
+                    // Create buttons from JSON data and append them
                     data.buttons.forEach(button => {
                         var btn = document.createElement('a');
                         btn.setAttribute('href', button.link);
                         btn.setAttribute('class', 'btn');
                         btn.textContent = button.text;
-                        btn.setAttribute('target', '_blank'); // Buka link di tab baru
+                        btn.setAttribute('target', '_blank'); // Open link in new tab
                         buttonsContainer.appendChild(btn);
                     });
 
-                    // Tampilkan kontainer tombol setelah tombol awal ditekan
-                    buttonsContainer.style.display = 'flex'; // Menampilkan kontainer tombol
+                    // Display buttons container after initial button is clicked
+                    buttonsContainer.style.display = 'flex'; // Show buttons container
 
-                    // Tampilkan card-footer setelah tombol awal ditekan
+                    // Show card footer after initial button is clicked
                     var cardFooter = document.querySelector('.card-footer');
                     cardFooter.style.display = 'block';
 
-                    // Sembunyikan tombol pertama setelah ditekan
+                    // Hide the initial button after it's clicked
                     var playButton = document.getElementById('playButton');
                     playButton.style.display = 'none';
                 })
@@ -135,10 +136,10 @@
         }
     </script>
 
-    <!-- Tag audio untuk file nightchanges.mp3 dari GitHub -->
-    <audio src="https://cdn.jsdelivr.net/gh/feeldreams/feeldreams.github.io/audio/nightchanges.mp3" id="linkmp3" class="sembunyi"></audio>
+    <!-- Audio tag for nightchanges.mp3 file from GitHub -->
+    <audio src="https://cdn.jsdelivr.net/gh/feeldreams/feeldreams.github.io/audio/nightchanges.mp3" id="linkmp3" class="hidden"></audio>
 
-    <!-- Script JavaScript dari Bootstrap -->
+    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
