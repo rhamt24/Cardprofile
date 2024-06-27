@@ -2,7 +2,7 @@
     "buttons": [
         {
             "title": "Github",
-            "link": "#",
+            "link": "https://github.com/RexxHayanasi",
             "icon": "fab fa-github"
         },
         {
@@ -22,7 +22,7 @@
         },
         {
             "title": "Telegram",
-            "link": "#",
+            "link": "http://t.me/rexxzynxd",
             "icon": "fab fa-telegram"
         },
         {
@@ -32,7 +32,7 @@
         },
         {
             "title": "WhatsApp",
-            "link": "#",
+            "link": "https://wa.me/message/IFCA2G2YF6EEG1",
             "icon": "fab fa-whatsapp"
         }
     ]
