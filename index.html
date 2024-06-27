@@ -80,7 +80,7 @@
                 <p class="card-text">Hubungi saya</p>
                 <div id="buttons-container">
                     <!-- Tombol untuk memainkan audio -->
-                    <button onclick="playAudio()" class="btn">Putar Audio</button>
+                    <button onclick="playAudio()" class="btn" id="playButton">Putar Audio</button>
                 </div>
             </div>
             <div class="card-footer text-muted">
@@ -96,6 +96,10 @@
         function playAudio() {
             var audio = document.getElementById('linkmp3');
             audio.play();
+            
+            // Sembunyikan tombol setelah ditekan
+            var buttonsContainer = document.getElementById('buttons-container');
+            buttonsContainer.innerHTML = ''; // Mengosongkan isi dari div buttons-container
         }
     </script>
 
