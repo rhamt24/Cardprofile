@@ -56,6 +56,13 @@
         .btn {
             width: 100%;
             margin-bottom: 5px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards; /* Animasi fade-in selama 1 detik */
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Berakhir dengan opacity 1 (tombol sepenuhnya terlihat) */
+            }
         }
         .verified-badge {
             color: #1da1f2; /* Twitter blue color */
@@ -67,9 +74,9 @@
     <div class="card text-center">
         <img src="https://files.catbox.moe/0lla4n.png" class="card-img-top" alt="profile">
         <div class="card-body">
-            <h5 class="card-title">RexxzynXD <i class="fas fa-check-circle verified-badge"></i></h5>
+            <h5 class="card-title">RexxzynXD DEV <i class="fas fa-check-circle verified-badge"></i></h5>
             <p class="card-text">Contact me</p>
-            <div id="buttons-container"></div>
+            <button class="btn btn-primary">Click me</button> <!-- Tombol dengan animasi fade-in -->
         </div>
         <div class="card-footer text-muted">
             <i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia
@@ -77,6 +84,5 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
 </body>
 </html>
