@@ -20,6 +20,15 @@
             width: 100%;
             max-width: 400px;
             border-radius: 15px;
+            animation: pulseBorder 1.5s infinite alternate; /* Apply animation */
+        }
+        @keyframes pulseBorder {
+            from {
+                border-color: #007bff; /* Initial border color */
+            }
+            to {
+                border-color: #0056b3; /* Target border color */
+            }
         }
         .card-img-top {
             border-radius: 50%;
@@ -52,7 +61,7 @@
         <div class="card-body">
             <h5 class="card-title">RexxzynXD <i class="fas fa-check-circle verified-badge"></i></h5>
             <p class="card-text">Contact me</p>
-    <div id="buttons-container"></div>
+        <div id="buttons-container"></div>
         </div>
         <div class="card-footer text-muted">
             <i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia
