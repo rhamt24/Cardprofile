@@ -17,23 +17,18 @@
             background-position: center;
             margin: 0;
             padding: 0;
-            position: relative; /* Tambahkan posisi relatif untuk konten di atasnya */
         }
         .content {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative; /* Tambahkan posisi relatif untuk konten di atasnya */
-            z-index: 5; /* Tingkatkan indeks z untuk konten agar di atas efek hujan */
         }
         .card {
             width: 100%;
             max-width: 400px;
             border-radius: 15px;
             animation: pulseBorder 1.5s infinite alternate; /* Animasi border */
-            position: relative; /* Tambahkan posisi relatif untuk kartu */
-            z-index: 5; /* Tingkatkan indeks z untuk kartu agar di atas efek hujan */
         }
         @keyframes pulseBorder {
             from {
@@ -57,8 +52,6 @@
             color: #ffffff; /* Teks putih */
             border-color: #007bff; /* Warna border yang sesuai */
             transition: all 0.3s ease;
-            position: relative; /* Tambahkan posisi relatif untuk tombol */
-            z-index: 3; /* Tingkatkan indeks z untuk tombol agar di atas efek hujan */
         }
         .btn:hover {
             background-color: #0056b3; /* Warna lebih gelap saat hover */
@@ -75,72 +68,19 @@
             background-color: #f8f9fa; /* Warna latar belakang opsional */
             padding: 10px 0;
             width: 100%;
-            position: relative; /* Tambahkan posisi relatif untuk footer */
-            z-index: 2; /* Tingkatkan indeks z untuk footer agar di atas efek hujan */
-        }
-        /* Animasi hujan */
-        @keyframes rain {
-            0% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
-        .raindrop {
-            position: absolute;
-            width: 2px;
-            height: 10px;
-            background-color: #fff; /* Warna tetesan hujan */
-            animation: rain 1.5s linear infinite;
-            bottom: -10px; /* Mulai dari luar layar */
-            pointer-events: none;
-            z-index: 0; /* Tetapkan indeks z agar di bawah konten lain */
-        }
-        /* Animasi petir */
-        @keyframes lightning {
-            0% {
-                opacity: 0;
-            }
-            25% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
-            75% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-        .lightning {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 80%);
-            animation: lightning 3s linear infinite;
-            z-index: 0; /* Tetapkan indeks z agar di bawah konten lain */
         }
     </style>
 </head>
 <body>
-    <div class="raindrop"></div>
-    <div class="lightning"></div>
     <div class="content">
         <div class="card text-center">
             <img src="https://files.catbox.moe/0lla4n.png" class="card-img-top" alt="profile">
             <div class="card-body">
                 <h5 class="card-title">RexxzynXD <i class="fas fa-check-circle verified-badge"></i></h5>
                 <p class="card-text">Hubungi saya</p>
-                    <div id="buttons-container"></div>
-        </div>
-        <div class="card-footer text-muted">
+                <div id="buttons-container"></div>
+            </div>
+            <div class="card-footer text-muted">
                 <i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia
             </div>
         </div>
@@ -149,8 +89,6 @@
     <footer>&copy; Hak Cipta 2024 | RexxzynXD</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
-        // JavaScript tambahan dapat ditambahkan di sini untuk logika tambahan atau kontrol animasi, jika diperlukan.
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
