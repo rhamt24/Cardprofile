@@ -69,6 +69,10 @@
             padding: 10px 0;
             width: 100%;
         }
+        /* CSS untuk menyembunyikan kontainer dan footer */
+        #buttons-container, .card-footer {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -79,13 +83,15 @@
                 <h5 class="card-title">RexxzynXD <i class="fas fa-check-circle verified-badge"></i></h5>
                 <p class="card-text">Hubungi saya</p>
                 <div id="buttons-container">
-                    <!-- Tombol untuk memainkan audio -->
-                    <button onclick="playAudio()" class="btn" id="playButton">≡ Lihat Link</button>
-            </div>
+                    <!-- Konten di sini akan muncul setelah tombol pertama ditekan -->
+                    <button class="btn">Tombol Baru</button>
+                </div>
             </div>
             <div class="card-footer text-muted">
                 <i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia
             </div>
+            <!-- Tombol awal untuk memainkan audio -->
+            <button onclick="playAudio()" class="btn" id="playButton">≡ Lihat Link</button>
         </div>
     </div>
 
@@ -97,9 +103,16 @@
             var audio = document.getElementById('linkmp3');
             audio.play();
             
-            // Sembunyikan tombol setelah ditekan
+            // Tampilkan buttons-container dan card-footer setelah tombol pertama ditekan
             var buttonsContainer = document.getElementById('buttons-container');
-            buttonsContainer.innerHTML = ''; // Mengosongkan isi dari div buttons-container
+            buttonsContainer.style.display = 'block';
+            
+            var cardFooter = document.querySelector('.card-footer');
+            cardFooter.style.display = 'block';
+            
+            // Sembunyikan tombol pertama setelah ditekan
+            var playButton = document.getElementById('playButton');
+            playButton.style.display = 'none';
         }
     </script>
 
