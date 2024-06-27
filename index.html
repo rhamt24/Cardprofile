@@ -12,9 +12,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('https://example.com/your-background-image.jpg'); /* Replace with your image URL */
-            background-size: cover;
-            background-position: center;
+            overflow: hidden; /* Hide overflow to prevent scrollbars */
+        }
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
         }
         .card {
             width: 100%;
@@ -39,6 +45,13 @@
     </style>
 </head>
 <body>
+    <!-- Video Background -->
+    <video autoplay muted loop id="video-background">
+        <source src="your-background-video.mp4" type="video/mp4">
+        <!-- Add more sources for different video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+
     <div class="card text-center">
         <img src="https://files.catbox.moe/0lla4n.png" class="card-img-top" alt="profile">
         <div class="card-body">
