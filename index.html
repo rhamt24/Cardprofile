@@ -29,8 +29,16 @@
             margin: 15px auto;
         }
         .btn {
-            width: 100%;
+            width: 80%; /* Adjusted button width */
             margin-bottom: 5px;
+            background-color: #007bff; /* Bootstrap primary color */
+            color: #ffffff; /* White text */
+            border-color: #007bff; /* Matching border color */
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3; /* Darker shade of primary color on hover */
+            border-color: #0056b3;
         }
         .verified-badge {
             color: #1da1f2; /* Twitter blue color */
@@ -44,7 +52,7 @@
         <div class="card-body">
             <h5 class="card-title">RexxzynXD <i class="fas fa-check-circle verified-badge"></i></h5>
             <p class="card-text">Contact me</p>
-            <div id="buttons-container"></div>
+    <div id="buttons-container"></div>
         </div>
         <div class="card-footer text-muted">
             <i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia
