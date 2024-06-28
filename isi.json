@@ -26,9 +26,9 @@
             "icon": "fab fa-telegram"
         },
         {
-            "title": "Email",
-            "link": "#",
-            "icon": "fas fa-envelope"
+            "title": "Store Website",
+            "link": "https://rexxzynstore.vercel.app/#products",
+            "icon": "fas fa-rocketchat"
         },
         {
             "title": "WhatsApp",
