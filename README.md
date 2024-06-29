@@ -28,3 +28,7 @@ Contoh Card Profile
 📜 ↑ Tampilan masuk menuju profil link
 
 Website Ini dilengkapi dengan audio auto play berdurasi 35 Detik Lagu akan auto diputar ketika sudah mengklik (≡Lihat Link)
+
+
+Real Profile Card By 
+https://github.com/Akuivan13/profile-card.git
