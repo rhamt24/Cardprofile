@@ -17,4 +17,14 @@ Gunakan Tombol Dibawah Untuk deploy repo ini ke akun vercel kalian
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/RexxHayanasi/rexxzynprofile.git)
 
-https://files.catbox.moe/1mubay.jpg
+Contoh Card Profile
+
+![MixCollage-20-Apr-2024-11-03-PM-197](https://files.catbox.moe/6wzheg.jpg)
+
+☘️↑ Tampilan Awal
+
+![MixCollage-20-Apr-2024-11-03-PM-197](https://files.catbox.moe/88qbe0.jpg)
+
+📜 ↑ Tampilan masuk menuju profil link
+
+Website Ini dilengkapi dengan audio auto play berdurasi 35 Detik Lagu akan auto diputar ketika sudah mengklik (≡Lihat Link)
